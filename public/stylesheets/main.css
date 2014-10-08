@@ -1,0 +1,112 @@
+body {
+  background: lightslategray; }
+
+button.link {
+  background: none;
+  color: midnightblue;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: underline; }
+  button.link:hover {
+    text-decoration: none; }
+button.old {
+  border: 2px solid darkslategray;
+  background-color: slategray; }
+  button.old.success {
+    background-color: #284d26; }
+    button.old.success:hover {
+      background-color: #338621; }
+  button.old.alert {
+    background-color: #5d2d2e; }
+    button.old.alert:hover {
+      background-color: #b41f00; }
+
+main {
+  box-sizing: content-box;
+  max-width: 600px;
+  min-width: 600px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -340px;
+  padding: 50px 40px 40px;
+  background: white;
+  box-shadow: 0 0 3px 0 black; }
+
+header {
+  margin: 0 0 40px; }
+  header h1 {
+    font-size: 2.5em; }
+
+section.loading {
+  height: 300px;
+  padding-top: 80px;
+  background: powderblue;
+  color: white;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s; }
+  section.loading:hover {
+    color: black; }
+  section.loading div {
+    text-align: center; }
+  section.loading div:first-child {
+    position: absolute;
+    font-size: 2em;
+    margin-bottom: 20px;
+    width: 200px;
+    -webkit-animation: move 3s ease-in 0s infinite alternate;
+    animation: move 3s ease-in 0s infinite alternate; }
+  section.loading div:last-child {
+    padding: 150px 0 30px;
+    font-size: 1.2em; }
+
+@-webkit-keyframes move {
+  from {
+    left: 40px; }
+  to {
+    left: calc(100% - 40px - 200px); } }
+@keyframes move {
+  from {
+    left: 0;
+    bottom: auto; }
+  to {
+    left: auto;
+    bottom: 0; } }
+section.results {
+  min-height: 300px;
+  padding-top: 40px;
+  text-align: center; }
+  section.results h4 {
+    color: dimgray; }
+  section.results h2 > * {
+    display: inline-block; }
+  section.results .credits {
+    display: inline-block;
+    padding: 0 30px;
+    font-size: 6em;
+    text-align: center;
+    background: lightgreen;
+    border-radius: 100px;
+    min-width: 150px;
+    height: 150px;
+    margin: 0 auto 10px;
+    position: relative; }
+    section.results .credits small {
+      font-size: 0.2em;
+      color: dimgray;
+      margin-right: -0.6em;
+      position: absolute;
+      bottom: 2em; }
+  section.results .description {
+    width: 400px;
+    margin: 0 auto;
+    text-align: justify; }
+
+footer {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  text-align: center;
+  width: 100%; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,22 @@
+{
+  "name": "what_to_study",
+  "version": "0.0.0",
+  "authors": [
+    "Matias Saarinen <matias.saarinen@aalto.fi>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "angular-route": "~1.2.25",
+    "foundation": "~5.4.4",
+    "angular-animate": "~1.2.25",
+    "angular-sanitize": "~1.2.25"
+  }
+}

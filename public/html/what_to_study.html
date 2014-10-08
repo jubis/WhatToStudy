@@ -1,0 +1,25 @@
+<main class="">
+    <header>
+        <h1 class="text-center">What the Fuck Should I Study?</h1>
+    </header>
+    <section ng-show="initialSearch">
+        <button class="success large expand old" ng-click="tellMe()">Tell Me!</button>
+    </section>
+    <section ng-hide="initialSearch" class="row">
+        <button class="alert large old columns medium-6" ng-click="tellMe()">This is shit!</button>
+        <button class="success large old columns medium-5 medium-offset-1" ng-click="tellMe()">Good enough</button>
+    </section>
+    <section class="loading section-show-hide" ng-show="loading">
+        <div>I'm loading...</div>
+        <div>Don't be so fucking hasty!</div>
+    </section>
+    <section class="results section-show-hide" ng-show="results">
+        <h4 class="text-center">You should maybe try:</h4>
+        <h2 class="text-center">{{results.courseName}} <small>{{results.courseCode}}</small></h2>
+        <div class="credits">{{results.credits}}<small>cr</small></div>
+        <div class="description" ng-bind-html="results.description"></div>
+    </section>
+    <footer>
+        <button ng-hide="true" class="link expand">No - I wanna do something else instead</button>
+    </footer>
+</main>
