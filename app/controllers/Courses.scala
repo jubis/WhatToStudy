@@ -1,29 +1,23 @@
 package controllers
 
-import play.api.mvc.{Result, Action, Controller}
+import play.api.mvc.{Action, Result, Controller}
+import scala.concurrent.Future
 import services.{Course, CourseService}
 import play.api.libs.json._
-import scala.concurrent.Await
-import scala.concurrent.duration.Duration
+import scala.concurrent.ExecutionContext.Implicits.global
 
 object Courses extends Controller {
 
-  def index(random: Option[Boolean]) = Action {
-
-    val result = random.flatMap(
-      if(_) CourseService.loadRandomCourse()
-      else None
-    )
-
-    sendResultAsJson(result)
-
+  def index(random: Option[Boolean]) = Action.async {
+    random match {
+      case Some(true) => CourseService.loadRandomCourse().map(getResult(_))
+      case _ => Future(getResult(null))
+    }
   }
 
-  def sendResultAsJson(course: Option[Course]): Result = {
-    Ok(course.map(Json.format[Course].writes(_)).map(_.toString).getOrElse(""))
+  def getResult(course: Course): Result = course match {
+    case course: Course => Ok(Json.format[Course].writes(course))
+    case _ => Ok("")
   }
 
-  def sendError() {
-
-  }
 }
